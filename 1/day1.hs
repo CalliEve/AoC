@@ -9,7 +9,7 @@ getIntListInput path = do
 
 increasesCount :: [Int] -> Int
 increasesCount (x:y:z:[]) = 0
-increasesCount (x:y:z:xs) = if (x + y + z) < (y + z + head xs)
+increasesCount (x:y:z:xs) = if x < head xs
     then 1 + increasesCount (y:z:xs)
     else increasesCount (y:z:xs)
 
