@@ -20,7 +20,6 @@ data Setting = Most
 
 common :: [String] -> [Int] -> Setting -> String
 common (x:[]) _ _ = x
-common xs (_:[]) _ = head xs
 common xs (pos:positions) Most =
     let res = howCommon xs pos (0,0)
     in if fst res > snd res
@@ -28,7 +27,7 @@ common xs (pos:positions) Most =
     else common (filter (\x -> (x !! pos) == '0') xs) positions Most
 common xs (pos:positions) Least =
     let res = howCommon xs pos (0,0)
-    in if fst res < snd res
+    in if fst res <= snd res
     then common (filter (\x -> (x !! pos) == '1') xs) positions Least
     else common (filter (\x -> (x !! pos) == '0') xs) positions Least
 
