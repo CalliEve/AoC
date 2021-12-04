@@ -25,9 +25,7 @@ createBoard (x:xs) = (map (\x -> (x, False)) $ parseIntList $ split ' ' x) : cre
 
 boardHasWonRow :: [[(Int, Bool)]] -> Bool
 boardHasWonRow [] = False
-boardHasWonRow (r:rs) = if and $ map (\(_,b) -> b) r
-    then True
-    else boardHasWonRow rs
+boardHasWonRow (r:rs) = (and $ map (\(_,b) -> b) r) || boardHasWonRow rs
 
 boardHasWonColumn :: [[(Int, Bool)]] -> Bool
 boardHasWonColumn b = boardHasWonRow $ transpose b
