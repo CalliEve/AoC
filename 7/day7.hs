@@ -1,5 +1,3 @@
-import GHC.Float (int2Float, float2Int)
-
 -- parse input to a list of integers,
 -- by taking the first line of the file, replacing all , to spaces,
 -- splitting on spaces using words and then mapping all the words to integers
