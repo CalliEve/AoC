@@ -6,15 +6,15 @@ getListInput path = readFile path >>= return . lines
 
 solve :: [String] -> [Maybe Int]
 solve [] = []
-solve (x:xs) = calcError x [] : solve xs
+solve (x:xs) = track x [] : solve xs
 
-calcError :: String -> [Char] -> Maybe Int
-calcError [] st = Just $ calcPoints $ reverse st
-calcError ('{':xs) st = calcError xs ('}':st)
-calcError ('(':xs) st = calcError xs (')':st)
-calcError ('[':xs) st = calcError xs (']':st)
-calcError ('<':xs) st = calcError xs ('>':st)
-calcError (x:xs) (s:st) = if x == s then calcError xs st else Nothing
+track :: String -> [Char] -> Maybe Int
+track [] st = Just $ calcPoints $ reverse st
+track ('{':xs) st = track xs ('}':st)
+track ('(':xs) st = track xs (')':st)
+track ('[':xs) st = track xs (']':st)
+track ('<':xs) st = track xs ('>':st)
+track (x:xs) (s:st) = if x == s then track xs st else Nothing
 
 calcPoints :: [Char] -> Int
 calcPoints [] = 0
