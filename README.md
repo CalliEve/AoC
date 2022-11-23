@@ -1,8 +1,10 @@
-# AoC 2021
+# AoC
 
-All the challenges of [Advent of Code 2021] that have been done by me
+All the challenges of [Advent of Code] that have been done by me
 
-I will be using this year's challenges to teach myself haskell 
+I have used 2021's challenges to teach myself haskell
 
-[Advent of Code 2021]: https://adventofcode.com/2021
+In 2022 I plan to use the challenge to teach myself F#
+
+[Advent of Code]: https://adventofcode.com
 
