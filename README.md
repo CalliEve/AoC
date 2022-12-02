@@ -6,5 +6,6 @@ I have used 2021's challenges to teach myself haskell
 
 In 2022 I plan to use the challenge to teach myself F#
 
-[Advent of Code]: https://adventofcode.com
+Note that all solutions here are for part 2 of the daily challenge
 
+[Advent of Code]: https://adventofcode.com
